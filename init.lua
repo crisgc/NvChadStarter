@@ -13,6 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
+-- Mudando a fonte
+vim.opt.guifont = "FiraCode Nerd Font Mono:12"
+
+
 -- load plugins
 require("lazy").setup({
   {
@@ -40,6 +44,13 @@ require("lazy").setup({
       --   ignore_install = { 'org' },
       -- })
     end,
+  },
+  
+  {
+      "nvim-neorg/neorg",
+      lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+      version = "*", -- Pin Neorg to the latest stable release
+      config = true,
   },
 
   { import = "plugins" },
